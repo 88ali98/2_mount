@@ -1,32 +1,41 @@
 #1
-# class Computer:
-#     def __init__(self, cpu, memory):
-#         self.cpu = cpu
-#         self.memory = memory
+class Computer:
+    def __init__(self, cpu, memory):
+        self.__cpu = cpu
+        self.__memory = memory
 
-#     def info(self):
-#         print(f"{self.cpu}, {self.memory}")
+    @property
+    def cpu(self):
+        return self.__cpu
+    @property
+    def memory(self):
+        return self.__memory
+    def __make_computations(self):
+        print(f"""Резюльтат сложения {self.cpu+self.memory}
+                  Резюльтат вычисления {self.cpu-self.memory} 
+                  Резюльтат умнажение {self.cpu*self.memory}
+                  Резюльтат деления {self.cpu/self.memory}""")
+        
 
-# computer = Computer("AMD Ryzen 9 7950x3D", "140 гигабайт")
-# computer.info()
+    @property
+    def make_computations(self):
+        return self.__make_computations
+    
 
+computer = Computer(134112433, 140)
+computer.make_computations()
 
+class Laptop(Computer):#2
+    def __init__(self, cpu, memory, memory_card):
+        super().__init__(cpu, memory)
+        self.__memory_card = memory_card
 
-#2 НЕ ТУ НЕ ПОНЯЛ
-#3НЕ ТУ НЕ ПОНЯЛ
+    @property
+    def memory_card(self):
+        return self.__memory_card
+    def info(self):
+        print(f"процессор - {self.cpu}, память - {self.memory}, карта памяти - {self.memory_card}")
 
-# class Laptop:#4
-#     pass
+laptop = Laptop(124, 500, 75)
+laptop.info()
 
-
-# class Computer(Laptop):
-#     def __init__(self, memory_card):
-#         self.memory_card = "75 гигабайт"
-
-#     def info(self):
-#         print(f"{self.memory_card}")
-
-# computer = Computer(f"75 гигабайт")
-# computer.info()
-
-#5
