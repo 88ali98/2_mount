@@ -7,7 +7,7 @@
 #     def info(self):
 #         print(f" {self.fillname}, {self.age}, {self.is_married}")
 
-# person = Person("Broc", "21", "Женат")
+# person = Person("Али", "13", " не Женат")
 # person.info()
 
 # class Person:#2
@@ -21,18 +21,17 @@
 #     def info(self):
 #         print(f"{self.fillname}, {self.age}, {self.is_married}, {self.introduce_mayself}")
 
-# person = Person("меня зовут", "Broc", "мне 21 год", "я Женат")
+# person = Person("меня зовут", "Али", "мне 13 лет", "я не Женат")
 # person.info()
 
 
-# class Teacher(Person):
-#     def __init__(self, experience):
+# class Teacher(Person):#3
+#     def __init__(self, fillname, age, is_married, experience):
+#         super().__init__(fillname, age, is_married, experience)
 #         self.experience = experience
 
 #     def info(self):
-#         print(f"{self.experience}")
+#         print(f"имя - {self.fillname}, возраст - {self.age}, не женат - {self.is_married}, опытный - {self.experience}")
 
-# person = Person("")
-# person.info()
-
-
+# teacher = Teacher("Али", "13", "нет", "Майнкрафтер")
+# teacher.info()
